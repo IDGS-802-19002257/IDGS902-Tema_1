@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CajasDinamicas";
+}
+
+<h2>CajasDinamicas</h2>
+
+<form action="/Pruebas2/CajasDinamicas">
+    <label>Numero de cajas</label>
+    <input type="number" id="NumCajas" name="NumCajas" value="ViewBag.NumCajas" />
+    <input type="submit" id="MostrarCajas" value="Mostrar Cajas" />
+
+
+</form>
+@if(ViewBag.NumCajas > 0)
+{
+    <hr />
+    <h2>Cajas</h2>
+    <form action="/Pruebas2/CajasDinamicasResultados">
+        @for (int i = 0; i < ViewBag.NumCajas; i++)
+        {
+            <input type="number" step="0.1" name="Caja[@i]" value="" placeholder="Caja @(i + 1)" class="mb-1" />
+            <br />
+        }
+        <input type="submit" id="Calcular" value="Calcular" />
+    </form>
+}

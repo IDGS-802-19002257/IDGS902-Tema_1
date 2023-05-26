@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Diccionario";
+}
+
+<h2>Diccionario </h2>
+
+<form action="/Diccionarios/index" method="get">
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            
+        </div>
+        <input type="text" class="form-control" name="buscar" placeholder="Palabra" value="@ViewBag.Buscar">
+        <div class="input-group-append">
+            <select name="idioma" class="form-select">
+                <option value="esp" @(ViewBag.Idioma == "esp" ? "selected" : "")>Inglés</option>
+                <option value="ing" @(ViewBag.Idioma == "ing" ? "selected" : "")>Español</option>
+            </select>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            <a href="/Diccionarios/Registrar" class="btn btn-outline-info my-2 my-sm-0">Agregar</a>
+            @if (ViewBag.Buscar != null)
+            {
+                <a href="/Diccionarios/Index" class="btn btn-outline-danger my-2 my-sm-0">Cancelar</a>
+            }
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th class="col-md-6">Español</th>
+            <th class="col-md-6">Ingles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ViewBag.Palabras != null)
+        {
+            foreach (var item in ViewBag.Palabras)
+            {
+                <tr>
+                    <td>@item.Esp</td>
+                    <td>@item.Ing</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

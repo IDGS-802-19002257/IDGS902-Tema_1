@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "OperasBas";
+}
+
+<h2>OperasBas</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/" method="post">
+                <label>Numero 1:</label>
+                <input type="text" name="n1" value="" />
+                <br />
+                <label>Numero 2:</label>
+                <input type="text" name="n2" value="" />
+                <br />
+                <label>Suma</label>
+                <input type="radio" name="opera" value="suma" />
+                <label>Resta</label>
+                <input type="radio" name="opera" value="resta" />
+                <label>Multiplicacion</label>
+                <input type="radio" name="opera" value="multi" />
+                <label>Division</label>
+                <input type="radio" name="opera" value="divi" />
+                <br />
+                <input type="submit" name="name" value="Calcular" />
+            </form>
+        </div>
+        <div class="col-lg-6">
+            <h1>La suma es: @ViewBag.Res</h1>
+        </div>
+    </div>
+</div>

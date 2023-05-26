@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "CajasDinamicasResultados";
+}
+
+<h2>Resultado de Cajas Dinamicas</h2>
+<hr />
+
+<h3>El promedio es: <span>@ViewBag.Promedio</span></h3>
+<h3>La suma es: @ViewBag.Sum</h3>
+
+@if (ViewBag.Repetidos != null && ViewBag.Repetidos.Count > 0)
+{
+    <h3>Números repetidos: <span>@string.Join(", ", ViewBag.Repetidos)</span></h3>
+}
+else
+{
+    <h3>No cuenta con numeros repetidos</h3>
+}
